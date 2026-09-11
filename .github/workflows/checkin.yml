@@ -81,8 +81,10 @@ jobs:
             exit 1
           fi
           
+          set +e
           python -m swu_checkin.check_in > checkin_result.txt 2>&1
           exit_code=$?
+          set -e
           
           echo ""
           echo "========================================="
